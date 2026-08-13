@@ -90,6 +90,26 @@
   .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px var(--amber);flex-shrink:0;}
   .eyebrow::after{content:'';flex:0 0 auto;width:46px;height:1px;background:var(--border);}
 
+  .avatar-row{display:flex;align-items:center;gap:16px;margin-bottom:22px;}
+  .avatar{
+    width:76px;height:76px;border-radius:50%;
+    object-fit:cover;
+    border:1.5px solid var(--border);
+    background:var(--panel);
+    flex-shrink:0;
+  }
+  .avatar-ring{
+    width:76px;height:76px;border-radius:50%;
+    position:relative;flex-shrink:0;
+  }
+  .avatar-ring::before{
+    content:'';position:absolute;inset:-4px;border-radius:50%;
+    border:1px dashed rgba(92,200,255,0.4);
+  }
+  .avatar-ring .avatar{width:100%;height:100%;}
+  .avatar-meta{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-faint);letter-spacing:.03em;}
+  .avatar-meta b{color:var(--amber);font-weight:500;}
+
   .hero-text h1{font-size:44px;font-weight:700;color:var(--ink);letter-spacing:-0.01em;line-height:1.08;}
   .hero-text .role{color:var(--ink-dim);font-family:'IBM Plex Mono',monospace;font-size:13.5px;margin-top:12px;letter-spacing:.02em;}
   .hero-text .role b{color:var(--amber);font-weight:500;}
@@ -283,6 +303,15 @@
     <div class="hero-grid">
       <div class="hero-text">
         <div class="eyebrow"><span class="dot"></span>sheet 00 — title block</div>
+
+        <div class="avatar-row">
+          <div class="avatar-ring">
+            <!-- Your photo: place profile.jpg in the same folder as this index.html -->
+            <img class="avatar" src="profile.jpg" alt="Photo of Aftab Ahammed">
+          </div>
+          <div class="avatar-meta">FIG. 00<br><b>PORTRAIT</b> · SCALE 1:1</div>
+        </div>
+
         <h1>Aftab Ahammed</h1>
         <div class="role">CSE Student · <b>Bangladesh University of Professionals</b></div>
         <p class="tagline">I build things end to end — routing algorithms, embedded control loops, and full-stack apps — then take them apart to see why they work.</p>
